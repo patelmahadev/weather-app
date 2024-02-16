@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+.weather-layuot-wrapper {
+  background-color: #000;
+  height: 100vh;
+  font-family: "Lato", sans-serif !important;
+  .MuiTypography-root {
+    font-family: "Lato", sans-serif !important;
+    @media screen and (max-width: 500px) {
+      font-size: 14px !important;
+    }
+  }
+}
+
+.app-layout {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../../Assets/cloud-bg-1.jpeg");
+  background-size: cover;
+  background-position: center;
+  @media screen and (max-width: 600px) {
+    width: 100% !important;
+  }
+}
+
+header {
+  background-color: #000 !important;
+  height: 10vh;
+  .logo-box {
+    width: 110px;
+    justify-content: space-between;
+    padding: 0px 25px;
+    align-items: center;
+    .MuiButtonBase-root {
+      color: #fff;
+      display: none;
+      @media screen and (max-width: 600px) {
+        display: block;
+      }
+    }
+  }
+  .user-box {
+    text-align: right;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+    h4.MuiTypography-root {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .MuiTypography-root {
+      font-size: 13px;
+      font-weight: normal;
+    }
+  }
+  .user-icon {
+    svg {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
+.user-box-mobile {
+  display: none;
+  padding: 15px;
+  h4.MuiTypography-root {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .MuiTypography-root {
+    font-size: 13px;
+    font-weight: normal;
+  }
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+}
+.app-sidebar {
+  width: 200px;
+  height: calc(100vh - 64px);
+  border-radius: 0 !important;
+  position: relative;
+  transition: 0.3s all ease-in !important;
+  background-color: transparent !important;
+  @media screen and (max-width: 600px) {
+    position: fixed;
+    left: -100%;
+  }
+  .side-overlay {
+    content: "";
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    transition: 0.4s all ease-in !important;
+    &.overlay-active {
+      @media screen and (max-width: 600px) {
+        visibility: visible;
+      }
+    }
+  }
+  &.active-sidebar {
+    left: 0;
+    position: absolute;
+  }
+  ul {
+    a {
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+      svg {
+        color: #fff;
+      }
+      &:active {
+        color: #000;
+      }
+      &.active {
+        background-color: rgba(0, 0, 0, 0.06);
+      }
+      .MuiListItemIcon-root {
+        min-width: auto;
+      }
+    }
+  }
+}
+
+.card-weather-wrapper {
+  background-color: transparent !important;
+  height: 100%;
+  box-shadow: none !important;
+  .temprature-wrapper {
+    height: calc(100% - 30px);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: space-between;
+    @media screen and (max-width: 500px) {
+      padding: 15px;
+      height: calc(100% - 15px);
+    }
+    .date-time-wrapper {
+      li {
+        color: #fff !important;
+        font-size: 30px !important;
+        font-weight: 600;
+        @media screen and (max-width: 500px) {
+          font-size: 20px !important;
+          line-height: 32px;
+        }
+      }
+    }
+    .temprature-num-wrapper {
+      margin-bottom: 20px;
+      h2 {
+        font-size: 50px !important;
+        font-weight: 700 !important;
+        color: #ff855c;
+        margin: 0px;
+        @media screen and (max-width: 500px) {
+          font-size: 38px !important;
+          line-height: 32px;
+          margin-bottom: 8px;
+        }
+      }
+      span {
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+  .weather-info-wrapper {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1.5% 8%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    @media screen and (max-width: 500px) {
+      padding: 1.5% 4%;
+    }
+    .refresh-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      .reload-icon {
+        color: #fff !important;
+        background-color: rgba(255, 200, 55, 0.2);
+      }
+    }
+
+    li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff !important;
+      img {
+        width: 35px;
+      }
+    }
+  }
+}
